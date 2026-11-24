@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DreamHome Realty — Real Estate</title>
+
+    <!-- Tailwind CSS & DaisyUI CDN link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- FontAwesome -->
+    <script
+      src="https://kit.fontawesome.com/8674d629b1.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Custom Styles -->
+    <style>
+      .no-scrollbar::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Edge */
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none; /* IE/Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-slate-800">
+    <!-- Header Section Start -->
+    <header class="relative z-20">
+      <div class="mx-auto py-5 px-8 flex justify-between items-center">
+        <!-- Menu Icon -->
+        <button
+          id="menu-icon"
+          type="button"
+          aria-label="Open menu"
+          class="cursor-pointer lg:hidden text-lg"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Logo Section -->
+        <a href="#" class="shrink-0">
+          <img
+            src="./images/Houzez-logo.svg"
+            alt="Houzez-logo"
+            class="h-5 md:h-7"
+          />
+        </a>
+
+        <!-- Middle Nav Bar -->
+        <nav
+          id="nav"
+          class="max-lg:fixed max-lg:inset-y-0 max-lg:left-0 max-lg:z-50 max-lg:w-80 max-lg:overflow-y-auto max-lg:bg-white max-lg:px-8 max-lg:py-8 max-lg:shadow-lg max-lg:-translate-x-full transition-transform duration-300"
+        >
+          <div class="mb-8 flex justify-end lg:hidden">
+            <button
+              id="remove-nav"
+              type="button"
+              aria-label="Close menu"
+              class="text-xl text-slate-700 hover:text-sky-500 cursor-pointer"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <ul
+            id="nav-lists"
+            class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5 lg:gap-8 uppercase text-xs font-normal lg:font-bold"
+          >
+            <!-- List 1 -->
+            <li class="relative group">
+              <button
+                type="button"
+                class="submenu-toggle w-full lg:w-auto flex items-center justify-between lg:justify-start gap-1 uppercase text-xs font-normal lg:font-bold hover:text-sky-500 cursor-pointer"
+              >
+                <span>Demos</span>
+                <i
+                  class="fa-solid fa-angle-down submenu-icon transition-transform duration-200 lg:group-hover:rotate-180"
+                ></i>
+              </button>
+
+              <ul
+                class="submenu hidden lg:block mt-2 lg:mt-1 w-full lg:w-48 p-2 bg-slate-50 lg:bg-white rounded lg:shadow-md font-semibold text-xs capitalize text-slate-800 lg:absolute lg:left-0 lg:invisible lg:opacity-0 lg:translate-y-2 transition-all duration-200 lg:group-hover:visible lg:group-hover:opacity-100 lg:group-hover:translate-y-0"
+              >
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 1</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 2</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 3</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 4</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 5</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 6</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- List 2 -->
+            <li class="relative group">
+              <button
+                type="button"
+                class="submenu-toggle w-full lg:w-auto flex items-center justify-between lg:justify-start gap-1 uppercase text-xs font-normal lg:font-bold hover:text-sky-500 cursor-pointer"
+              >
+                <span>Listing</span>
+                <i
+                  class="fa-solid fa-angle-down submenu-icon transition-transform duration-200 lg:group-hover:rotate-180"
+                ></i>
+              </button>
+
+              <ul
+                class="submenu hidden lg:block mt-2 lg:mt-1 w-full lg:w-48 p-2 bg-slate-50 lg:bg-white rounded lg:shadow-md font-semibold text-xs capitalize text-slate-800 lg:absolute lg:left-0 lg:invisible lg:opacity-0 lg:translate-y-2 transition-all duration-200 lg:group-hover:visible lg:group-hover:opacity-100 lg:group-hover:translate-y-0"
+              >
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 1</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 2</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 3</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- List 3 -->
+            <li class="relative group">
+              <button
+                type="button"
+                class="submenu-toggle w-full lg:w-auto flex items-center justify-between lg:justify-start gap-1 uppercase text-xs font-normal lg:font-bold hover:text-sky-500 cursor-pointer"
+              >
+                <span>Property</span>
+                <i
+                  class="fa-solid fa-angle-down submenu-icon transition-transform duration-200 lg:group-hover:rotate-180"
+                ></i>
+              </button>
+
+              <ul
+                class="submenu hidden lg:block mt-2 lg:mt-1 w-full lg:w-48 p-2 bg-slate-50 lg:bg-white rounded lg:shadow-md font-semibold text-xs capitalize text-slate-800 lg:absolute lg:left-0 lg:invisible lg:opacity-0 lg:translate-y-2 transition-all duration-200 lg:group-hover:visible lg:group-hover:opacity-100 lg:group-hover:translate-y-0"
+              >
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 1</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 2</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 3</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 4</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- List 4 -->
+            <li class="relative group">
+              <button
+                type="button"
+                class="submenu-toggle w-full lg:w-auto flex items-center justify-between lg:justify-start gap-1 uppercase text-xs font-normal lg:font-bold hover:text-sky-500 cursor-pointer"
+              >
+                <span>Agents</span>
+                <i
+                  class="fa-solid fa-angle-down submenu-icon transition-transform duration-200 lg:group-hover:rotate-180"
+                ></i>
+              </button>
+
+              <ul
+                class="submenu hidden lg:block mt-2 lg:mt-1 w-full lg:w-48 p-2 bg-slate-50 lg:bg-white rounded lg:shadow-md font-semibold text-xs capitalize text-slate-800 lg:absolute lg:left-0 lg:invisible lg:opacity-0 lg:translate-y-2 transition-all duration-200 lg:group-hover:visible lg:group-hover:opacity-100 lg:group-hover:translate-y-0"
+              >
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 1</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 2</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 3</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- List 5 -->
+            <li class="relative group">
+              <button
+                type="button"
+                class="submenu-toggle w-full lg:w-auto flex items-center justify-between lg:justify-start gap-1 uppercase text-xs font-normal lg:font-bold hover:text-sky-500 cursor-pointer"
+              >
+                <span>Elementors</span>
+                <i
+                  class="fa-solid fa-angle-down submenu-icon transition-transform duration-200 lg:group-hover:rotate-180"
+                ></i>
+              </button>
+
+              <ul
+                class="submenu hidden lg:block mt-2 lg:mt-1 w-full lg:w-48 p-2 bg-slate-50 lg:bg-white rounded lg:shadow-md font-semibold text-xs capitalize text-slate-800 lg:absolute lg:left-0 lg:invisible lg:opacity-0 lg:translate-y-2 transition-all duration-200 lg:group-hover:visible lg:group-hover:opacity-100 lg:group-hover:translate-y-0"
+              >
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 1</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 2</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 3</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 4</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 5</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- List 6 -->
+            <li class="relative group">
+              <button
+                type="button"
+                class="submenu-toggle w-full lg:w-auto flex items-center justify-between lg:justify-start gap-1 uppercase text-xs font-normal lg:font-bold hover:text-sky-500 cursor-pointer"
+              >
+                <span>More</span>
+                <i
+                  class="fa-solid fa-angle-down submenu-icon transition-transform duration-200 lg:group-hover:rotate-180"
+                ></i>
+              </button>
+
+              <ul
+                class="submenu hidden lg:block mt-2 lg:mt-1 w-full lg:w-48 p-2 bg-slate-50 lg:bg-white rounded lg:shadow-md font-semibold text-xs capitalize text-slate-800 lg:absolute lg:left-0 lg:invisible lg:opacity-0 lg:translate-y-2 transition-all duration-200 lg:group-hover:visible lg:group-hover:opacity-100 lg:group-hover:translate-y-0"
+              >
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 1</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 2</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 3</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 4</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 5</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="block py-1.5 px-2 hover:text-sky-500"
+                    >List Item 6</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Sign up logo -->
+        <div class="flex gap-6 items-center">
+          <button
+            type="button"
+            aria-label="User account"
+            class="cursor-pointer hover:text-sky-500"
+          >
+            <i class="fa-solid fa-user"></i>
+          </button>
+          <button
+            class="btn btn-outline btn-info cursor-pointer hidden sm:inline-flex"
+          >
+            Create a listing
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- side sticky bar -->
+    <div class="flex flex-col gap-4 mr-5 right-0 mt-60 fixed z-100">
+      <div
+        class="p-3 rounded-xl bg-white shadow-sm size-18 cursor-pointer flex flex-col items-center justify-center gap-1 transition-all duration-150 hover:bg-green-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-400"
+      >
+        <i class="fa-solid fa-cart-shopping text-2xl"></i>
+        <h2 class="text-xs font-semibold">Buy now</h2>
+      </div>
+
+      <div
+        class="p-3 rounded-xl bg-white shadow-sm size-18 cursor-pointer flex flex-col items-center justify-center gap-1 transition-all duration-150 hover:bg-slate-600 hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-600 hover:text-white"
+      >
+        <i class="fa-solid fa-folder-open text-2xl"></i>
+        <h2 class="text-xs font-semibold">Tampaltes</h2>
+      </div>
+    </div>
+
+    <!-- hero section -->
+    <section class="mx-auto py-5 px-8">
+      <div
+        class="bg-[url('images/miami-beach-view-scaled.jpg')] bg-cover bg-center bg-no-repeat h-185 rounded-3xl relative overflow-hidden flex items-center justify-center"
+      >
+        <!-- cover -->
+        <div class="h-full w-full bg-black/65"></div>
+
+        <!-- Body -->
+        <div
+          class="container mx-auto absolute z-10 flex justify-between items-center flex-col lg:flex-row gap-10"
+        >
+          <!-- Details -->
+          <div class="text-white max-lg:text-center">
+            <h2 class="text-4xl md:text-5xl font-bold">Welcome to Houzez</h2>
+            <p class="text-sm sm:text-lg mt-4">
+              The most flexible real estate WordPress theme packed with advanced
+              tools to <br class="hidden md:block" />
+              design, manage, and grow your real estate business.
+            </p>
+            <button
+              class="btn btn-info mt-5 rounded-full px-10 py-6 text-white text-lg font-semibold max-lg:hidden"
+            >
+              Get Started <i class="fa-solid fa-arrow-right-long"></i>
+            </button>
+          </div>
+
+          <!-- Form -->
+          <form
+            class="bg-white p-6 rounded-xl shadow-lg max-lg:w-xl max-md:w-lg max-sm:w-xs max-[400px]:w-full"
+          >
+            <h2 class="text-xl font-bold mb-4 max-md:text-md">
+              Explore listings tailored to your needs
+            </h2>
+
+            <input
+              type="text"
+              placeholder="Enter a Keyword"
+              class="w-full border border-gray-300 rounded-lg p-3 mb-4 outline-none focus:border-blue-500"
+            />
+
+            <div class="relative w-full" id="categoryDropdown">
+              <button
+                id="dropdownBtn"
+                type="button"
+                class="w-full p-3 border border-gray-300 text-gray-400 rounded-lg bg-white text-left"
+              >
+                Select Category
+              </button>
+
+              <div
+                id="dropdown"
+                class="hidden absolute w-full mt-2 bg-white border border-gray-300 rounded-lg shadow-lg overflow-auto z-50 h-60"
+              >
+                <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                  Select Category
+                </div>
+                <div class="p-3 hover:bg-blue-100 cursor-pointer">House</div>
+                <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                  Apartment
+                </div>
+                <div class="p-3 hover:bg-blue-100 cursor-pointer">Villa</div>
+                <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                  Condominium
+                </div>
+                <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                  Townhouse
+                </div>
+                <div class="p-3 hover:bg-blue-100 cursor-pointer">Studio</div>
+                <div class="p-3 hover:bg-blue-100 cursor-pointer">Duplex</div>
+                <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                  Penthouse
+                </div>
+                <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                  Commercial Property
+                </div>
+                <div class="p-3 hover:bg-blue-100 cursor-pointer">Land</div>
+              </div>
+            </div>
+
+            <!-- Flex 2 dropdown -->
+            <div class="flex flex-col sm:flex-row mt-4 gap-4">
+              <!-- First Dropdown -->
+              <div class="relative w-full custom-dropdown">
+                <button
+                  type="button"
+                  class="dropdownBtn w-full p-3 border border-gray-300 text-gray-400 rounded-lg bg-white text-left"
+                >
+                  Nums. of room
+                </button>
+
+                <div
+                  class="dropdown hidden absolute left-0 top-0 mt-15 w-full mt-2 bg-white border border-gray-300 rounded-lg shadow-lg overflow-auto z-50 h-60"
+                >
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                    Nums. of room
+                  </div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">1</div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">2</div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">3</div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">4</div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">5</div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">6</div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">7</div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">8</div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">9</div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">10</div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">Any</div>
+                </div>
+              </div>
+
+              <!-- Second Dropdown -->
+              <div class="relative w-full custom-dropdown">
+                <button
+                  type="button"
+                  class="dropdownBtn w-full p-3 border border-gray-300 text-gray-400 rounded-lg bg-white text-left"
+                >
+                  Your Budget
+                </button>
+
+                <div
+                  class="dropdown hidden absolute left-0 top-0 w-full mt-15 bg-white border border-gray-300 rounded-lg shadow-lg overflow-auto z-50 h-60"
+                >
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                    Your Budget
+                  </div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">$5,000</div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                    $10,000
+                  </div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                    $50,000
+                  </div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                    $100,000
+                  </div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                    $200,000
+                  </div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                    $300,000
+                  </div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                    $400,000
+                  </div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                    $500,000
+                  </div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                    $600,000
+                  </div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                    $700,000
+                  </div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                    $800,000
+                  </div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                    $900,000
+                  </div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                    $1,000,000
+                  </div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                    $1,500,000
+                  </div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                    $2,000,000
+                  </div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                    $2,500,000
+                  </div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                    $5,000,000
+                  </div>
+                  <div class="p-3 hover:bg-blue-100 cursor-pointer">
+                    $10,000,000
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="btn btn-info text-white mt-4 w-full rounded-full max-[400px]:w-[320px]"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore Home Styles -->
+    <section class="pt-20">
+      <div class="container mx-auto flex flex-col items-center">
+        <!-- Titles -->
+        <div class="w-full flex justify-between items-center">
+          <div>
+            <h2 class="text-5xl font-semibold mb-2">Explore Home Styles</h2>
+            <p>
+              Flexible layouts for any property type — from modern studios to
+              luxury villas.
+            </p>
+          </div>
+          <div class="cursor-pointer hover:text-sky-500">
+            <p>See more <i class="fa-solid fa-arrow-right-long"></i></p>
+          </div>
+        </div>
+
+        <!-- carousel container -->
+        <div
+          id="cardSlider"
+          class="flex gap-4 w-full overflow-x-auto no-scrollbar select-none cursor-pointer py-10"
+        >
+          <!-- card 1 -->
+          <div
+            class="p-3 shadow-lg w-full md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] shrink-0 flex items-center gap-4 rounded-md border border-gray-200 slider-card"
+          >
+            <img
+              src="./images/card-1.jpg"
+              alt="Apartment"
+              class="h-20 w-20 object-cover rounded-md shrink-0 cursor-pointer hover:opacity-50 transition-all duration-150"
+            />
+            <div>
+              <h3 class="uppercase font-semibold text-sm">Apartment</h3>
+              <p class="text-xs text-gray-400 mt-0.5">15 properties</p>
+            </div>
+          </div>
+
+          <!-- card 2 -->
+          <div
+            class="p-3 shadow-lg w-full md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] shrink-0 flex items-center gap-4 rounded-md border border-gray-200 slider-card"
+          >
+            <img
+              src="./images/card-2.jpg"
+              alt="Apartment"
+              class="h-20 w-20 object-cover rounded-md shrink-0 cursor-pointer hover:opacity-50 transition-all duration-150"
+            />
+            <div>
+              <h3 class="uppercase font-semibold text-sm">Office</h3>
+              <p class="text-xs text-gray-400 mt-0.5">4 properties</p>
+            </div>
+          </div>
+
+          <!-- card 3 -->
+          <div
+            class="p-3 shadow-lg w-full md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] shrink-0 flex items-center gap-4 rounded-md border border-gray-200 slider-card"
+          >
+            <img
+              src="./images/card-3.jpg"
+              alt="Apartment"
+              class="h-20 w-20 object-cover rounded-md shrink-0 cursor-pointer hover:opacity-50 transition-all duration-150"
+            />
+            <div>
+              <h3 class="uppercase font-semibold text-sm">Shop</h3>
+              <p class="text-xs text-gray-400 mt-0.5">1 properties</p>
+            </div>
+          </div>
+
+          <!-- card 4 -->
+          <div
+            class="p-3 shadow-lg w-full md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] shrink-0 flex items-center gap-4 rounded-md border border-gray-200 slider-card"
+          >
+            <img
+              src="./images/card-4.jpg"
+              alt="Apartment"
+              class="h-20 w-20 object-cover rounded-md shrink-0 cursor-pointer hover:opacity-50 transition-all duration-150"
+            />
+            <div>
+              <h3 class="uppercase font-semibold text-sm">Single Family</h3>
+              <p class="text-xs text-gray-400 mt-0.5">10 properties</p>
+            </div>
+          </div>
+
+          <!-- card 5 -->
+          <div
+            class="p-3 shadow-lg w-full md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] shrink-0 flex items-center gap-4 rounded-md border border-gray-200 slider-card"
+          >
+            <img
+              src="./images/card-5.jpg"
+              alt="Apartment"
+              class="h-20 w-20 object-cover rounded-md shrink-0 cursor-pointer hover:opacity-50 transition-all duration-150"
+            />
+            <div>
+              <h3 class="uppercase font-semibold text-sm">Studio</h3>
+              <p class="text-xs text-gray-400 mt-0.5">6 properties</p>
+            </div>
+          </div>
+
+          <!-- card 6 -->
+          <div
+            class="p-3 shadow-lg w-full md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] shrink-0 flex items-center gap-4 rounded-md border border-gray-200 slider-card"
+          >
+            <img
+              src="./images/card-6.jpg"
+              alt="Apartment"
+              class="h-20 w-20 object-cover rounded-md shrink-0 cursor-pointer hover:opacity-50 transition-all duration-150"
+            />
+            <div>
+              <h3 class="uppercase font-semibold text-sm">Villa</h3>
+              <p class="text-xs text-gray-400 mt-0.5">9 properties</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controller -->
+        <div class="flex gap-3">
+          <div
+            id="scrollLeft"
+            class="cursor-pointer rounded-md bg-cyan-100 text-xl p-1"
+          >
+            <i class="fa-solid fa-angle-left"></i>
+          </div>
+          <div
+            id="scrollRight"
+            class="cursor-pointer rounded-md bg-cyan-100 text-xl p-1"
+          >
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="px-8 pt-20">
+      <div
+        class="container mx-auto flex flex-col lg:flex-row items-center lg:items-start lg:gap-7 relative"
+      >
+        <!-- image -->
+        <div class="w-full max-w-[650px] overflow-hidden">
+          <img
+            src="./images/aboutImage-1.jpg"
+            alt="About us"
+            class="aspect-square object-cover rounded-xl transition-transform duration-500 hover:scale-105"
+          />
+        </div>
+
+        <!-- Content -->
+        <div class="mt-10 lg:mt-40 text-center lg:text-left">
+          <h3 class="uppercase text-sky-500 text-xs font-extrabold">About</h3>
+
+          <h2 class="text-4xl lg:text-5xl font-semibold mt-3">
+            Built for Real Estate Experts, <br class="hidden lg:block" />
+            Trusted Worldwide
+          </h2>
+
+          <p class="text-gray-500 mt-3">
+            Houzez helps you create, manage, and scale your property
+            <br class="hidden lg:block" />
+            business with confidence.
+          </p>
+        </div>
+
+        <!-- overflow content -->
+        <div
+          class="lg:w-[70%] bg-white rounded-lg shadow-xl mt-10 lg:mt-0 bottom-0 right-0 lg:absolute"
+        >
+          <!-- div 1 -->
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 p-10"
+          >
+            <!-- card-1 -->
+            <div>
+              <h3 class="text-4xl font-bold">53,000+</h3>
+              <p class="text-md text-gray-500 mt-4">
+                Real estate professionals worldwide trust Houzez to power their
+                websites.
+              </p>
+            </div>
+
+            <!-- card-2 -->
+            <div>
+              <h3 class="text-4xl font-bold">2,600+</h3>
+              <p class="text-md text-gray-500 mt-4">
+                Positive reviews praising Houzez for its flexibility and
+                reliable support.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-4xl font-bold">4.85+</h3>
+              <p class="text-md text-gray-500 mt-4">
+                Average rating reflecting the theme’s quality and user
+                satisfaction.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-4xl font-bold">10+</h3>
+              <p class="text-md text-gray-500 mt-4">
+                Years of experience creating solutions for real estate
+                professionals.
+              </p>
+            </div>
+          </div>
+          <!-- div 2 -->
+          <div
+            class="px-10 py-2 rounded-lg border-t border-t-gray-300 flex items-center justify-between"
+          >
+            <!-- agent image -->
+            <div class="flex items-center gap-3">
+              <div class="size-11 rounded-full overflow-hidden">
+                <img
+                  src="./images/aboutImage-2.jpg"
+                  alt=""
+                  class="aspect-square w-full object-cover"
+                />
+              </div>
+              <p class="font-serif italic text-md">
+                Take your next step in real estate!
+              </p>
+            </div>
+
+            <div class="cursor-pointer text-sky-500">
+              <p>See more <i class="fa-solid fa-arrow-right-long"></i></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Discover Featured Homes -->
+    <section class="py-20">
+      <div class="container mx-auto">
+        <!-- Titles -->
+        <div class="w-full flex justify-between items-center">
+          <div>
+            <h2 class="text-5xl font-semibold mb-4">Discover Featured Homes</h2>
+            <p>
+              Explore a curated selection of properties that showcase the best
+              opportunities for living and investing.
+            </p>
+          </div>
+          <div class="cursor-pointer hover:text-sky-500">
+            <p>See more <i class="fa-solid fa-arrow-right-long"></i></p>
+          </div>
+        </div>
+
+        <!-- Card container -->
+        <div class="flex gap-4 py-10">
+          <!-- card-1 -->
+
+          <div
+            class="card-group group shadow-lg w-full md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] shrink-0 rounded-md border border-gray-200 slider-card"
+          >
+            <!-- Images -->
+            <div class="cursor-pointer relative overflow-hidden rounded-t-md">
+              <img src="./images/036.jpg" alt="" class="w-full" />
+
+              <!-- Icons overlay -->
+              <div
+                class="absolute inset-0 p-4 flex flex-col justify-between items-end"
+              >
+                <!-- Badge -->
+                <div
+                  class="w-fit uppercase font-semibold text-xs rounded-sm px-2 py-0.5 bg-black/30 backdrop-blur-2xl border border-white/10 text-white hover:text-sky-400 transition-colors duration-300"
+                >
+                  For Rent
+                </div>
+
+                <!-- Slider controller -->
+                <div class="w-full flex items-center justify-between">
+                  <div
+                    class="p-1 bg-white/25 backdrop-blur-md border border-white/10 shadow-lg text-white hover:bg-white/35 transition-all duration-300 text-2xl rounded-md"
+                  >
+                    <i class="fa-solid fa-angle-left"></i>
+                  </div>
+
+                  <div
+                    class="p-1 bg-white/25 backdrop-blur-md border border-white/10 shadow-lg text-white hover:bg-white/35 transition-all duration-300 text-2xl rounded-md"
+                  >
+                    <i class="fa-solid fa-angle-right"></i>
+                  </div>
+                </div>
+
+                <!-- Bottom icons -->
+                <div
+                  class="flex gap-1 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200"
+                >
+                  <!-- Icon 1: Preview -->
+                  <div
+                    class="group/icon relative p-1 bg-black/25 backdrop-blur-md border border-white/10 shadow-lg text-white hover:bg-black/60 transition-all duration-300 rounded-md"
+                  >
+                    <i
+                      class="fa-solid fa-up-right-and-down-left-from-center"
+                    ></i>
+
+                    <!-- Tooltip -->
+                    <div
+                      class="absolute z-20 w-max whitespace-nowrap bg-black/90 px-2 py-1 text-xs rounded-sm bottom-full mb-2 left-1/2 -translate-x-1/2 opacity-0 invisible group-hover/icon:opacity-100 group-hover/icon:visible transition-all duration-150"
+                    >
+                      Preview
+
+                      <span
+                        class="absolute size-2 bg-black/90 rotate-45 -bottom-1 left-1/2 -translate-x-1/2"
+                      ></span>
+                    </div>
+                  </div>
+
+                  <!-- Icon 2: Favourite -->
+                  <div
+                    class="group/icon relative p-1 bg-black/25 backdrop-blur-md border border-white/10 shadow-lg text-white hover:bg-black/60 transition-all duration-300 rounded-md"
+                  >
+                    <i class="fa-regular fa-heart"></i>
+
+                    <!-- Tooltip -->
+                    <div
+                      class="absolute z-20 w-max whitespace-nowrap bg-black/90 px-2 py-1 text-xs rounded-sm bottom-full mb-2 left-1/2 -translate-x-1/2 opacity-0 invisible group-hover/icon:opacity-100 group-hover/icon:visible transition-all duration-150"
+                    >
+                      Favourite
+
+                      <span
+                        class="absolute size-2 bg-black/90 rotate-45 -bottom-1 left-1/2 -translate-x-1/2"
+                      ></span>
+                    </div>
+                  </div>
+
+                  <!-- Icon 3: Compare -->
+                  <div
+                    class="group/icon relative p-1 bg-black/25 backdrop-blur-md border border-white/10 shadow-lg text-white hover:bg-black/60 transition-all duration-300 rounded-md"
+                  >
+                    <i class="fa-regular fa-square-plus"></i>
+
+                    <!-- Tooltip -->
+                    <div
+                      class="absolute z-20 w-max whitespace-nowrap bg-black/90 px-2 py-1 text-xs rounded-sm bottom-full mb-2 left-1/2 -translate-x-1/2 opacity-0 invisible group-hover/icon:opacity-100 group-hover/icon:visible transition-all duration-150"
+                    >
+                      Add to Compare
+
+                      <span
+                        class="absolute size-2 bg-black/90 rotate-45 -bottom-1 left-1/2 -translate-x-1/2"
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Details -->
+            <div class="p-5">
+              <h3
+                class="text-lg font-bold hover:text-sky-500 transition-all duration-150 cursor-pointer"
+              >
+                Office in Downtown Miami
+              </h3>
+
+              <h3 class="text-lg font-bold text-sky-500">$7,400/mo</h3>
+
+              <div class="flex gap-2 mt-1">
+                <div class="flex gap-1 items-center">
+                  <i class="fa-solid fa-shower"></i>
+                  <p>1</p>
+                </div>
+
+                <div class="flex gap-1 items-center">
+                  <i class="fa-solid fa-ruler"></i>
+                  <p>2400 sqft</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- button -->
+      </div>
+    </section>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
