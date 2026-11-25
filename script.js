@@ -273,22 +273,39 @@ function animateCounter({
 
 // Discover Featured Homes
 const allCards = document.querySelectorAll(".slider-card");
-const cardContainer = document.getElementById("card-container");
-const cardHeight = document.getElementById("cardHeight").offsetHeight;
-const seeMore = document.getElementById("see-more-btn");
-let isExpanded = false;
 
-cardContainer.style.height = `${cardHeight + 50}px`;
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.getElementById("card-container");
+  const button = document.getElementById("see-more-btn");
 
- seeMore.addEventListener("click", function(){
-  if(!isExpanded){
-    cardContainer.style.height = `${2 * (cardHeight + 50)}px`;
-    isExpanded = true;
-  }else{
-    cardContainer.style.height = `${cardHeight + 50}px`;
-    isExpanded = false;
+  if (!container || !button) return;
+
+  const INITIAL_COUNT = 4;
+  let expanded = false;
+
+  function getCards() {
+    return Array.from(container.querySelectorAll(".slider-card"));
   }
- })
+
+  function updateCards() {
+    const cards = getCards();
+
+    cards.forEach((card, index) => {
+      card.hidden = !expanded && index >= INITIAL_COUNT;
+    });
+
+    button.textContent = expanded ? "See Less" : "See More";
+    button.setAttribute("aria-expanded", String(expanded));
+  }
+
+  button.addEventListener("click", function () {
+    expanded = !expanded;
+    updateCards();
+  });
+
+  updateCards();
+});
+
 
 allCards.forEach((card) => {
   const gallery = card.querySelector(".image-gallery");
@@ -317,7 +334,6 @@ allCards.forEach((card) => {
       });
     }
   });
-
 
   prevBtn.addEventListener("click", () => {
     const step = getStep();

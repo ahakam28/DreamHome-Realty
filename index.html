@@ -390,35 +390,38 @@
           </div>
 
           <!-- Form -->
+
           <form
             data-aos="fade-left"
             data-aos-anchor="#example-anchor"
             data-aos-offset="500"
             data-aos-duration="500"
-            class="bg-white p-6 rounded-xl shadow-lg max-lg:w-xl max-md:w-lg max-sm:w-xs max-[400px]:w-full"
+            class="w-full max-w-md mx-auto bg-white p-4 sm:p-6 rounded-xl shadow-lg"
           >
-            <h2 class="text-xl font-bold mb-4 max-md:text-md">
+            <h2 class="text-lg sm:text-xl font-bold mb-4">
               Explore listings tailored to your needs
             </h2>
 
+            <!-- Keyword -->
             <input
               type="text"
               placeholder="Enter a Keyword"
-              class="w-full border border-gray-300 rounded-lg p-3 mb-4 outline-none focus:border-blue-500"
+              class="w-full min-w-0 border border-gray-300 rounded-lg p-3 mb-4 outline-none focus:border-blue-500"
             />
 
-            <div class="relative w-full" id="categoryDropdown">
+            <!-- Category Dropdown -->
+            <div class="relative w-full min-w-0" id="categoryDropdown">
               <button
                 id="dropdownBtn"
                 type="button"
-                class="w-full p-3 border border-gray-300 text-gray-400 rounded-lg bg-white text-left"
+                class="w-full p-3 border border-gray-300 text-gray-500 rounded-lg bg-white text-left"
               >
                 Select Category
               </button>
 
               <div
                 id="dropdown"
-                class="hidden absolute w-full mt-2 bg-white border border-gray-300 rounded-lg shadow-lg overflow-auto z-50 h-60"
+                class="hidden absolute top-full left-0 w-full mt-2 bg-white border border-gray-300 rounded-lg shadow-lg overflow-y-auto z-50 max-h-60"
               >
                 <div class="p-3 hover:bg-blue-100 cursor-pointer">
                   Select Category
@@ -446,19 +449,19 @@
               </div>
             </div>
 
-            <!-- Flex 2 dropdown -->
-            <div class="flex flex-col sm:flex-row mt-4 gap-4">
-              <!-- First Dropdown -->
-              <div class="relative w-full custom-dropdown">
+            <!-- Room and Budget -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-4">
+              <!-- Room Dropdown -->
+              <div class="relative w-full min-w-0 custom-dropdown">
                 <button
                   type="button"
-                  class="dropdownBtn w-full p-3 border border-gray-300 text-gray-400 rounded-lg bg-white text-left"
+                  class="dropdownBtn w-full p-3 border border-gray-300 text-gray-500 rounded-lg bg-white text-left"
                 >
                   Nums. of room
                 </button>
 
                 <div
-                  class="dropdown hidden absolute left-0 top-0 mt-15 w-full mt-2 bg-white border border-gray-300 rounded-lg shadow-lg overflow-auto z-50 h-60"
+                  class="dropdown hidden absolute top-full left-0 mt-2 w-full bg-white border border-gray-300 rounded-lg shadow-lg overflow-y-auto z-50 max-h-60"
                 >
                   <div class="p-3 hover:bg-blue-100 cursor-pointer">
                     Nums. of room
@@ -477,17 +480,17 @@
                 </div>
               </div>
 
-              <!-- Second Dropdown -->
-              <div class="relative w-full custom-dropdown">
+              <!-- Budget Dropdown -->
+              <div class="relative w-full min-w-0 custom-dropdown">
                 <button
                   type="button"
-                  class="dropdownBtn w-full p-3 border border-gray-300 text-gray-400 rounded-lg bg-white text-left"
+                  class="dropdownBtn w-full p-3 border border-gray-300 text-gray-500 rounded-lg bg-white text-left"
                 >
                   Your Budget
                 </button>
 
                 <div
-                  class="dropdown hidden absolute left-0 top-0 w-full mt-15 bg-white border border-gray-300 rounded-lg shadow-lg overflow-auto z-50 h-60"
+                  class="dropdown hidden absolute top-full left-0 mt-2 w-full bg-white border border-gray-300 rounded-lg shadow-lg overflow-y-auto z-50 max-h-60"
                 >
                   <div class="p-3 hover:bg-blue-100 cursor-pointer">
                     Your Budget
@@ -548,8 +551,10 @@
               </div>
             </div>
 
+            <!-- Search Button -->
             <button
-              class="btn btn-info text-white mt-4 w-full rounded-full max-[400px]:w-[320px]"
+              type="submit"
+              class="btn btn-info text-white mt-4 w-full rounded-full py-3"
             >
               Search
             </button>
@@ -559,13 +564,15 @@
     </section>
 
     <!-- Explore Home Styles -->
-    <section class="pt-20">
+    <section class="pt-20 px-8">
       <div class="container mx-auto flex flex-col items-center">
         <!-- Titles -->
         <div class="w-full flex justify-between items-center">
           <div>
-            <h2 class="text-5xl font-semibold mb-2">Explore Home Styles</h2>
-            <p>
+            <h2 class="text-3xl md:text-5xl font-semibold mb-2">
+              Explore Home Styles
+            </h2>
+            <p class="text-sm md:text-lg">
               Flexible layouts for any property type — from modern studios to
               luxury villas.
             </p>
@@ -708,12 +715,12 @@
         <div class="mt-10 lg:mt-40 text-center lg:text-left">
           <h3 class="uppercase text-sky-500 text-xs font-extrabold">About</h3>
 
-          <h2 class="text-4xl lg:text-5xl font-semibold mt-3">
+          <h2 class="text-3xl md:text-5xl font-semibold mt-3">
             Built for Real Estate Experts, <br class="hidden lg:block" />
             Trusted Worldwide
           </h2>
 
-          <p class="text-gray-500 mt-3">
+          <p class="text-gray-500 mt-3 text-sm md:text-lg">
             Houzez helps you create, manage, and scale your property
             <br class="hidden lg:block" />
             business with confidence.
@@ -794,7 +801,7 @@
     </section>
 
     <!-- Discover Featured Homes -->
-    <section class="py-20">
+    <section class="py-20 px-8">
       <div class="container mx-auto flex flex-col items-center justify-center">
         <!-- Titles -->
         <div
@@ -804,10 +811,13 @@
           class="w-full flex justify-between items-center"
         >
           <div>
-            <h2 class="text-5xl font-semibold mb-4">Discover Featured Homes</h2>
-            <p>
-              Explore a curated selection of properties that showcase the best
-              opportunities for living and investing.
+            <h2 class="text-3xl md:text-5xl font-semibold mb-4">
+              Discover Featured Homes
+            </h2>
+            <p class="text-sm md:text-lg">
+              Explore a curated selection of properties that
+              <br class="md:hidden" />
+              showcase the best opportunities for living and investing.
             </p>
           </div>
           <div
@@ -2111,14 +2121,12 @@
           </article>
         </div>
         <!-- button -->
-        <div>
-          <button
-            id="see-more-btn"
-            class="uppercase btn btn-outline btn-info btn-lg font-semibold"
-          >
-            See More
-          </button>
-        </div>
+        <button
+          id="see-more-btn"
+          class="uppercase btn btn-outline btn-info btn-lg font-semibold"
+        >
+          See More
+        </button>
       </div>
     </section>
 
