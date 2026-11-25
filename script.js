@@ -241,4 +241,140 @@ function scrollManuallyL() {
 controllRight.addEventListener("click", scrollManuallyR);
 controllLeft.addEventListener("click", scrollManuallyL);
 
+function animateCounter({
+  elementId,
+  endValue,
+  duration = 2000,
+  decimals = 0,
+}) {
+  const el = document.getElementById(elementId);
+  if (!el) return;
 
+  let current = 0;
+  const intervalTime = 40;
+  const totalSteps = Math.max(1, Math.floor(duration / intervalTime));
+  const step = endValue / totalSteps;
+
+  const interval = setInterval(() => {
+    current += step;
+
+    if (current >= endValue) {
+      current = endValue;
+      clearInterval(interval);
+    }
+
+    if (decimals > 0) {
+      el.innerText = current.toFixed(decimals);
+    } else {
+      el.innerText = Math.round(current).toLocaleString();
+    }
+  }, intervalTime);
+}
+
+// Discover Featured Homes
+const allCards = document.querySelectorAll(".slider-card");
+const cardContainer = document.getElementById("card-container");
+const cardHeight = document.getElementById("cardHeight").offsetHeight;
+const seeMore = document.getElementById("see-more-btn");
+let isExpanded = false;
+
+cardContainer.style.height = `${cardHeight + 50}px`;
+
+ seeMore.addEventListener("click", function(){
+  if(!isExpanded){
+    cardContainer.style.height = `${2 * (cardHeight + 50)}px`;
+    isExpanded = true;
+  }else{
+    cardContainer.style.height = `${cardHeight + 50}px`;
+    isExpanded = false;
+  }
+ })
+
+allCards.forEach((card) => {
+  const gallery = card.querySelector(".image-gallery");
+  const prevBtn = card.querySelector(".prev-btn");
+  const nextBtn = card.querySelector(".next-btn");
+  const images = card.querySelectorAll(".snap-start");
+
+  if (!gallery || !prevBtn || !nextBtn || !images.length) return;
+
+  const getStep = () => images[0].clientWidth || gallery.clientWidth;
+  const getMaxScroll = () => gallery.scrollWidth - gallery.clientWidth;
+
+  nextBtn.addEventListener("click", () => {
+    const step = getStep();
+    const maxScroll = getMaxScroll();
+
+    if (gallery.scrollLeft >= maxScroll - 2) {
+      gallery.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
+    } else {
+      gallery.scrollBy({
+        left: step,
+        behavior: "smooth",
+      });
+    }
+  });
+
+
+  prevBtn.addEventListener("click", () => {
+    const step = getStep();
+    const maxScroll = getMaxScroll();
+
+    if (gallery.scrollLeft <= 2) {
+      gallery.scrollTo({
+        left: maxScroll,
+        behavior: "smooth",
+      });
+    } else {
+      gallery.scrollBy({
+        left: -step,
+        behavior: "smooth",
+      });
+    }
+  });
+});
+
+const aboutOverFlow = document.getElementById("aboutOverFlow");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCounter({
+          elementId: "count-1",
+          endValue: 5300,
+          duration: 2000,
+          decimals: 0,
+        });
+        animateCounter({
+          elementId: "count-2",
+          endValue: 2600,
+          duration: 2000,
+          decimals: 0,
+        });
+        animateCounter({
+          elementId: "count-3",
+          endValue: 4.85,
+          duration: 2000,
+          decimals: 2,
+        });
+        animateCounter({
+          elementId: "count-4",
+          endValue: 10,
+          duration: 2000,
+          decimals: 0,
+        });
+
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.3,
+  },
+);
+
+// observer.observe(aboutOverFlow);
