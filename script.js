@@ -1,3 +1,19 @@
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) {
+    header.classList.remove("relative");
+    header.classList.add("sticky");
+    header.classList.add("top-0");
+    header.classList.add("shadow-lg");
+  } else {
+    header.classList.add("relative");
+    header.classList.remove("sticky");
+    header.classList.remove("top-0");
+    header.classList.remove("shadow-lg");
+  }
+});
+
 const menuIcon = document.getElementById("menu-icon");
 const nav = document.getElementById("nav");
 const removeIcon = document.getElementById("remove-nav");
@@ -305,7 +321,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateCards();
 });
-
 
 allCards.forEach((card) => {
   const gallery = card.querySelector(".image-gallery");

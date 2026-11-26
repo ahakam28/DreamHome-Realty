@@ -36,7 +36,7 @@
   </head>
   <body class="bg-gray-50 text-slate-800">
     <!-- Header Section Start -->
-    <header class="relative z-20">
+    <header id="header" class="relative bg-white z-20 transition-all duration-150 ">
       <div class="mx-auto py-5 px-8 flex justify-between items-center">
         <!-- Menu Icon -->
         <button
@@ -341,19 +341,19 @@
     </header>
 
     <!-- side sticky bar -->
-    <div class="flex flex-col gap-4 mr-5 right-0 mt-60 fixed z-100">
+    <div class="flex flex-col gap-4 mr-5 right-0 mt-10 lg:mt-60 fixed z-100">
       <div
-        class="p-3 rounded-xl bg-white shadow-sm size-18 cursor-pointer flex flex-col items-center justify-center gap-1 transition-all duration-150 hover:bg-green-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-400"
+        class="p-3 sm:p-3 rounded-xl bg-white shadow-sm sm:size-18 cursor-pointer flex flex-col items-center justify-center gap-1 transition-all duration-150 hover:bg-green-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-400"
       >
-        <i class="fa-solid fa-cart-shopping text-2xl"></i>
-        <h2 class="text-xs font-semibold">Buy now</h2>
+        <i class="fa-solid fa-cart-shopping text:lg sm:text-2xl"></i>
+        <h2 class="text-[8px] sm:text-xs font-semibold">Buy now</h2>
       </div>
 
       <div
-        class="p-3 rounded-xl bg-white shadow-sm size-18 cursor-pointer flex flex-col items-center justify-center gap-1 transition-all duration-150 hover:bg-slate-600 hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-600 hover:text-white"
+        class="p-3 rounded-xl bg-white shadow-sm sm:size-18 cursor-pointer flex flex-col items-center justify-center gap-1 transition-all duration-150 hover:bg-slate-600 hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-600 hover:text-white"
       >
-        <i class="fa-solid fa-folder-open text-2xl"></i>
-        <h2 class="text-xs font-semibold">Tampaltes</h2>
+        <i class="fa-solid fa-folder-open text:lg sm:text-2xl"></i>
+        <h2 class="text-[8px] sm:text-xs font-semibold">Tampaltes</h2>
       </div>
     </div>
 
@@ -2127,6 +2127,284 @@
         >
           See More
         </button>
+      </div>
+    </section>
+
+    <!-- Exclusive Property Highlights -->
+    <section class="">
+      <div
+        data-aos="fade-down"
+        data-aos-duration="500"
+        class="container mx-auto px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+      >
+        <!-- Column 1 -->
+        <div class="flex flex-col gap-6 justify-between">
+          <!-- Texts and titles -->
+          <div class="pt-2">
+            <h2
+              class="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight"
+            >
+              Exclusive Property Highlights
+            </h2>
+            <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+              Explore our curated property collections, from luxury waterfront
+              villas to limited-time offers. Find the listings that match your
+              lifestyle, goals, and investment vision.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center gap-2 mt-5 px-5 py-2.5 rounded-full bg-sky-500 hover:bg-sky-600 text-white text-sm font-medium transition"
+            >
+              <span>Explore All Listings</span>
+              <i class="fa-solid fa-arrow-right-long text-xs"></i>
+            </a>
+          </div>
+
+          <!-- Small Image -->
+          <div
+            class="relative group rounded-xl overflow-hidden shadow-md cursor-pointer"
+          >
+            <!-- image container -->
+            <div class="h-64 md:h-110">
+              <img
+                src="./images/card-6.jpg"
+                alt=""
+                class="h-full w-full object-cover"
+              />
+            </div>
+
+            <!-- top black shade -->
+            <div
+              class="absolute h-full w-full bg-black/40 top-0 group-hover:bg-black/10 transiiton-all duration-100"
+            ></div>
+
+            <!-- overflow content  -->
+            <div
+              class="text-white/85 absolute top-0 p-4 flex flex-col w-full h-full justify-between"
+            >
+              <div>
+                <h3 class="text-sm uppercase">1 Property</h3>
+                <h3 class="text-xl font-bold capitalize">luxury</h3>
+              </div>
+
+              <div class="flex justify-between items-center">
+                <p class="text-sm">More Details</p>
+                <p><i class="fa-solid fa-play"></i></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="flex flex-col gap-6">
+          <!-- Larg Image -->
+          <div
+            class="relative group rounded-xl overflow-hidden shadow-md cursor-pointer"
+          >
+            <!-- image container -->
+            <div class="h-64 md:h-120">
+              <img
+                src="./images/apartment-8.jpg"
+                alt=""
+                class="h-full w-full object-cover"
+              />
+            </div>
+
+            <!-- top black shade -->
+            <div
+              class="absolute h-full w-full bg-black/40 top-0 group-hover:bg-black/10 transiiton-all duration-100"
+            ></div>
+
+            <!-- overflow content  -->
+            <div
+              class="text-white/85 absolute top-0 p-4 flex flex-col w-full h-full justify-between"
+            >
+              <div>
+                <h3 class="text-sm uppercase">4 properties</h3>
+                <h3 class="text-xl font-bold capitalize">New Listing</h3>
+              </div>
+
+              <div class="flex justify-between items-center">
+                <p class="text-sm">More Details</p>
+                <p><i class="fa-solid fa-play"></i></p>
+              </div>
+            </div>
+          </div>
+          <!-- Small Image -->
+          <div
+            class="relative group rounded-xl overflow-hidden shadow-md cursor-pointer"
+          >
+            <!-- image container -->
+            <div class="h-64 md:h-80">
+              <img
+                src="./images/card-1.jpg"
+                alt=""
+                class="h-full w-full object-cover"
+              />
+            </div>
+
+            <!-- top black shade -->
+            <div
+              class="absolute h-full w-full bg-black/40 top-0 group-hover:bg-black/10 transiiton-all duration-100"
+            ></div>
+
+            <!-- overflow content  -->
+            <div
+              class="text-white/85 absolute top-0 p-4 flex flex-col w-full h-full justify-between"
+            >
+              <div>
+                <h3 class="text-sm uppercase">1 Property</h3>
+                <h3 class="text-xl font-bold capitalize">Price Reduced</h3>
+              </div>
+
+              <div class="flex justify-between items-center">
+                <p class="text-sm">More Details</p>
+                <p><i class="fa-solid fa-play"></i></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="flex flex-col gap-6">
+          <!-- Small Image -->
+          <div
+            class="relative group rounded-xl overflow-hidden shadow-md cursor-pointer"
+          >
+            <!-- image container -->
+            <div class="h-64 md:h-80">
+              <img
+                src="./images/card-4.jpg"
+                alt=""
+                class="h-full w-full object-cover"
+              />
+            </div>
+
+            <!-- top black shade -->
+            <div
+              class="absolute h-full w-full bg-black/40 top-0 group-hover:bg-black/10 transiiton-all duration-100"
+            ></div>
+
+            <!-- overflow content  -->
+            <div
+              class="text-white/85 absolute top-0 p-4 flex flex-col w-full h-full justify-between"
+            >
+              <div>
+                <h3 class="text-sm uppercase">3 properties</h3>
+                <h3 class="text-xl font-bold capitalize">waterfront</h3>
+              </div>
+
+              <div class="flex justify-between items-center">
+                <p class="text-sm">More Details</p>
+                <p><i class="fa-solid fa-play"></i></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Larg Image -->
+          <div
+            class="relative group rounded-xl overflow-hidden shadow-md cursor-pointer"
+          >
+            <!-- image container -->
+            <div class="h-64 md:h-120">
+              <img
+                src="./images/card-3.jpg"
+                alt=""
+                class="h-full w-full object-cover"
+              />
+            </div>
+
+            <!-- top black shade -->
+            <div
+              class="absolute h-full w-full bg-black/40 top-0 group-hover:bg-black/10 transiiton-all duration-100"
+            ></div>
+
+            <!-- overflow content  -->
+            <div
+              class="text-white/85 absolute top-0 p-4 flex flex-col w-full h-full justify-between"
+            >
+              <div>
+                <h3 class="text-sm uppercase">1 property</h3>
+                <h3 class="text-xl font-bold capitalize">Move-in Ready</h3>
+              </div>
+
+              <div class="flex justify-between items-center">
+                <p class="text-sm">More Details</p>
+                <p><i class="fa-solid fa-play"></i></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="flex flex-col gap-6">
+          <!-- Larg Image -->
+          <div
+            class="relative group rounded-xl overflow-hidden shadow-md cursor-pointer"
+          >
+            <!-- image container -->
+            <div class="h-64 md:h-120">
+              <img
+                src="./images/aboutImage-1.jpg"
+                alt=""
+                class="h-full w-full object-cover"
+              />
+            </div>
+
+            <!-- top black shade -->
+            <div
+              class="absolute h-full w-full bg-black/40 top-0 group-hover:bg-black/10 transiiton-all duration-100"
+            ></div>
+
+            <!-- overflow content  -->
+            <div
+              class="text-white/85 absolute top-0 p-4 flex flex-col w-full h-full justify-between"
+            >
+              <div>
+                <h3 class="text-sm uppercase">7 properties</h3>
+                <h3 class="text-xl font-bold capitalize">investment</h3>
+              </div>
+
+              <div class="flex justify-between items-center">
+                <p class="text-sm">More Details</p>
+                <p><i class="fa-solid fa-play"></i></p>
+              </div>
+            </div>
+          </div>
+          <!-- Small Image -->
+          <div
+            class="relative group rounded-xl overflow-hidden shadow-md cursor-pointer"
+          >
+            <!-- image container -->
+            <div class="h-64 md:h-80">
+              <img
+                src="./images/apartment-3.jpg"
+                alt=""
+                class="h-full w-full object-cover"
+              />
+            </div>
+
+            <!-- top black shade -->
+            <div
+              class="absolute h-full w-full bg-black/40 top-0 group-hover:bg-black/10 transiiton-all duration-100"
+            ></div>
+
+            <!-- overflow content  -->
+            <div
+              class="text-white/85 absolute top-0 p-4 flex flex-col w-full h-full justify-between"
+            >
+              <div>
+                <h3 class="text-sm uppercase">4 properties</h3>
+                <h3 class="text-xl font-bold capitalize">New Listin</h3>
+              </div>
+
+              <div class="flex justify-between items-center">
+                <p class="text-sm">More Details</p>
+                <p><i class="fa-solid fa-play"></i></p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
